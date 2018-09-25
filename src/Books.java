@@ -21,7 +21,7 @@ public class Books {
 
     public String toString()
     {
-        return "Title: "+title+"\nISBN: "+ISBN+"\nPrice: "+price+"\nNumber Of Pages: "+numOfPages;
+        return "Title: "+title+"\nISBN: "+ISBN+"\nPrice: €"+price+"\nNumber Of Pages: "+numOfPages;
     }
 
     public void setTitle(String title)

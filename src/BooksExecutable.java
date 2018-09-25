@@ -16,7 +16,7 @@ public class BooksExecutable {
         }
         book1.setTitle(title);
 
-        ISBN=JOptionPane.showInputDialog("Please enter the title of "+book1.getTitle());
+        ISBN=JOptionPane.showInputDialog("Please enter the ISBN of "+book1.getTitle());
         errorMessage=validISBN(ISBN);
         while(!errorMessage.equals("success"))
         {
@@ -38,14 +38,15 @@ public class BooksExecutable {
         errorMessage="";
 
         numOfPagesStr=JOptionPane.showInputDialog("Please enter the number of pages of "+book1.getTitle());
-        errorMessage=validPrice(priceStr);
+        errorMessage=validPages(numOfPagesStr);
         while(!errorMessage.equals("success"))
         {
             numOfPagesStr=JOptionPane.showInputDialog(errorMessage+"Please enter the number of pages of "+book1.getTitle());
-            errorMessage=validPrice(priceStr);
+            errorMessage=validPages(numOfPagesStr);
         }
         numOfPages=Integer.parseInt(numOfPagesStr);
         book1.setNumOfPages(numOfPages);
+        errorMessage="";
 
         JOptionPane.showMessageDialog(null,book1.toString());
 
@@ -109,5 +110,21 @@ public class BooksExecutable {
         }
         else
             return "success";
+    }
+
+    public static String validPages(String pages)
+    {
+        int i;
+
+        if(pages.length()==0)
+            return "Null entry";
+
+        for(i=0;i<pages.length();i++)
+        {
+            if(!Character.isDigit(pages.charAt(i)))
+                return "Invalid entry. Number must be all digits";
+        }
+
+        return "success";
     }
 }
