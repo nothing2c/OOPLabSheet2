@@ -12,7 +12,7 @@ public class Animal {
         setAge(0);
     }
 
-    public Animal(String type, String[] continents, double weight,int age){
+    public Animal(String type, String[] continents, double weight, int age){
         setType(type);
         setContinents(continents);
         setWeight(weight);
@@ -25,10 +25,13 @@ public class Animal {
 
         for(int i=0;i<continents.length;i++)
         {
-            arrayContents+=continents[i];
+            if(continents[i]!=null)
+                arrayContents+=continents[i]+", ";
+            else
+                break;
         }
 
-        return "\nType: "+getType()+"\nContinents: "+getContinents()+"\nWeight: "+weight+"\nAge: "+age;
+        return "\nType: "+getType()+"\nContinents: "+arrayContents+"\nWeight: "+weight+"\nAge: "+age+"\n";
     }
 
     public void setType(String type)
