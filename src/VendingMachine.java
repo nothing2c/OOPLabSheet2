@@ -3,23 +3,41 @@ public class VendingMachine {
 
     public VendingMachine()
     {
-        setNumTokens(0);
-        setNumCans(0);
+        this.numCans=0;
+        this.numTokens=0;
     }
 
-    public void setNumTokens(int numTokens) {
-        this.numTokens = numTokens;
+    public String toString()
+    {
+        return "Number of cans: "+getNumCans()+"\nNumber of tokens: "+getNumTokens();
     }
 
     public int getNumTokens() {
         return numTokens;
     }
 
-    public void setNumCans(int numCans) {
-        this.numCans = numCans;
-    }
-
     public int getNumCans() {
         return numCans;
+    }
+
+    public void fillUp(int cans)
+    {
+        this.numCans+=getNumCans() + cans;
+    }
+
+    public void buyCan()
+    {
+        if(checkCans()==true) {
+            numCans--;
+            numTokens++;
+        }
+    }
+
+    private boolean checkCans()
+    {
+        if(this.numCans>0)
+            return true;
+        else
+            return false;
     }
 }

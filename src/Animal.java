@@ -1,7 +1,7 @@
 public class Animal {
 
     private String type;
-    private String[] continents = new String[6];
+    private String[] continents;
     private double weight;
     private int age;
 
@@ -10,6 +10,7 @@ public class Animal {
         setContinents(null);
         setWeight(0);
         setAge(0);
+        continents = new String[7];
     }
 
     public Animal(String type, String[] continents, double weight, int age){
@@ -17,11 +18,14 @@ public class Animal {
         setContinents(continents);
         setWeight(weight);
         setAge(age);
+        continents = new String[continents.length];
     }
 
     public String toString()
     {
         String arrayContents="";
+
+        System.out.println(continents);
 
         for(int i=0;i<continents.length;i++)
         {

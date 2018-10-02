@@ -3,16 +3,16 @@ public class AnimalTest {
 
         String continents[] = {"Asia","Africa"};
 
-        //Animal lion = new Animal();
+        Animal lion = new Animal();
         Animal bear = new Animal("Bear",continents,45,45);
         Animal monkey = new Animal();
 
-        /*lion.setType("Lion");
+        lion.setType("Lion");
         lion.setContinents(continents);
         lion.setWeight(333.43);
-        lion.setAge(43);*/
+        lion.setAge(43);
 
-        System.out.println(bear.toString()+monkey.toString());
+        System.out.println(lion.toString()+bear.toString()+monkey.toString());
 
     }
 }
